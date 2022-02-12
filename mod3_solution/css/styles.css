@@ -1,0 +1,74 @@
+
+#genin-tile, #chunin-tile, #jonin-tile {
+  background-color: #979797;
+  height: 800px;
+  margin-bottom: 15px;
+  position: relative;
+  border: 1px solid #000000;
+  padding-left: 8px;
+  padding-right: 8px;
+  font-size: 1.2em; 
+}
+
+/*
+#back-to-top {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 1.2em;
+}
+*/
+.navbar-header button.navbar-toggle:hover {
+  background: #76ff03;
+}
+
+.navbar-header button.navbar-toggle:focus {
+   background-color:  #76ff03;
+}
+/******* From lecture *******/
+.navbar-header button.navbar-toggle, .navbar-header .icon-bar{
+  border: 1px solid #000000;
+  background-color:  #4caf50;
+}
+
+#nav-list {
+  margin-top: 10px;
+  background-color: #4caf50;
+}
+#nav-list a {
+  color: #161616;
+  text-align: center;
+  
+}
+#nav-list a:hover {
+  background-color:  #76ff03;
+}
+#nav-list a span {
+  font-size: 1.8em;
+}
+
+/* Shinobi Brand */
+.navbar-brand h1 { 
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: .75;
+}
+/********** Large devices only **********/
+@media (min-width: 1200px) {
+
+}
+
+/********** Medium devices only **********/
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+/********** Small devices only **********/
+@media (min-width: 768px) and (max-width: 991px) {
+}
+
+/********** Extra small devices only **********/
+@media (max-width: 767px) {
+
+}
