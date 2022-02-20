@@ -69,7 +69,7 @@ for (let i = 0; i < names.length; i++) {
 console.log("")
 console.log("****** Question 2A ********")
 console.log("Simple speak functions.  Return the greeting concatenated to the passed in name argument.")
-console.log(helloSpeaker.speakSimple() + byeSpeaker.speakSimple());
+console.log(helloSpeaker.speakSimple());
 
 // 2B
 console.log("")
