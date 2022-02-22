@@ -17,16 +17,20 @@ var speakWord = "Hello";
 // See Lecture 52, part 2
 helloSpeaker.speak = function(name) {
   console.log(speakWord + " " + name);  
-  names.push("Hello " + name);
+  //names.push("Hello " + name);
   //speakWords += "Hello " + name + " ";
 }
 
 // 2A
-var speakWords = "";
+helloSpeaker.speakSimple = function(name) {
+	return speakWord + " " + name;
+	//return speakWords;
+}
+/*
 helloSpeaker.speakSimple = function(name) {
 	return names;
 	//return speakWords;
-}
+}*/
 
 // 2B
 helloSpeaker.speakNoPrint = function speak(name) {

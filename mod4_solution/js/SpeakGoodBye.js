@@ -20,12 +20,16 @@ var speakWord = "Good Bye";
 // See Lecture 52, part 2
 byeSpeaker.speak = function speak(name) {
   console.log(speakWord + " " + name);
-  names.push("GoodBye " + name);
+  //names.push("GoodBye " + name);
   //speakWords += "GoodBye " + name + " ";
 }
 
 // 2A
-var speakWords = "";
+byeSpeaker.speakSimple = function(name) {
+	return speakWord + " " + name;
+	//return speakWords;
+}
+/*
 byeSpeaker.speakSimple = function(name) {
 	return names;
 	//return speakWords;
@@ -34,7 +38,7 @@ byeSpeaker.speakSimple = function(name) {
 // 2B
 byeSpeaker.speakNoPrint = function speak(name) {
   return "GoodBye " + name + " ";
-}
+}*/
 
 
 // STEP 9: Expose the 'byeSpeaker' object to the global scope. Name it
