@@ -65,12 +65,6 @@ for (let i = 0; i < names.length; i++) {
   }
 }
 
-// 2A
-console.log("")
-console.log("****** Question 2A ********")
-console.log("Simple speak functions.  Return the greeting concatenated to the passed in name argument.")
-console.log(helloSpeaker.speakSimple());
-
 // 2B
 console.log("")
 console.log("****** Question 2B ********")
@@ -80,38 +74,39 @@ console.log(names.map(buildMap))
 //3
 console.log("")
 console.log("****** Question 3 ********")
-console.log("Build Array.prototype.reduce function")
+console.log("Build Array.prototype.reduce function using speakSimple() function")
 console.log("Expand object to see hello and good arrays")
 const obj = {
   hello: [], 
   bye: []
 };
-reduceNames(obj);
+reduceNames(obj, names);
 console.log(obj);
 })();
 
-
-function reduceNames(obj) {
-  helloSpeaker.speakSimple().reduce(function(accumulator, currentValue) {
+// Reduce function
+function reduceNames(obj, names) {
+  names.reduce(function(accumulator, currentValue) {
     if (currentValue !== undefined ){
-      if (currentValue.includes("Hello"))
+       var firstLetter = currentValue.charAt(0).toLowerCase();
+      if (firstLetter === "j")
       {
-        obj.hello.push(currentValue);
+        obj.bye.push(byeSpeaker.speakSimple(currentValue));
       }
       else {
-        obj.bye.push(currentValue);
+        obj.hello.push(helloSpeaker.speakSimple(currentValue)); 
       }
     }    
   }, obj);
 }
 
-
+// Build map function
 function buildMap (name) {
   var firstLetter = name.charAt(0).toLowerCase();
   if (firstLetter === "j") {
-    return byeSpeaker.speakNoPrint(name);
+    return byeSpeaker.speakSimple(name);
   } 
   else {
-    return helloSpeaker.speakNoPrint(name);
+    return helloSpeaker.speakSimple(name);
   }    
 }
