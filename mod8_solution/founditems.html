@@ -1,0 +1,8 @@
+ <ul>
+  <li ng-repeat="item in ndCtrl.items">
+    {{ item.short_name }} {{item.name}}: {{item.description}}
+    <button ng-click="ndCtrl.onRemove({index: $index});">Don't want this!</button>
+  </li>
+</ul>
+
+
