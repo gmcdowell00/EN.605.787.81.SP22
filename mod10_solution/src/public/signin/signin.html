@@ -1,0 +1,50 @@
+<div class="float-child">
+  <fieldset >
+    <legend >Registration</legend>
+    <form name='regForm' novalidate>
+      <input type="text" name="firstname" placeholder="Firstname" ng-model="reg.user.firstname" required minlength="1" ng-maxlength="255">
+      <span ng-if="(regForm.firstname.$error.minlength || regForm.firstname.$error.required) && regForm.firstname.$touched">
+        Firstname must be at least 4 characters long
+      </span>
+      <span ng-if="regForm.firstname.$error.maxlength && regForm.firstname.$touched">
+        Firstname must not be longer than 10 characters
+      </span>
+      <br>
+      <input type="text" name="lastname" placeholder="Lastname" ng-model="reg.user.lastname" required minlength="1" ng-maxlength="255">
+      <span ng-if="(regForm.lastname.$error.minlength || regForm.lastname.$error.required) && regForm.lastname.$touched">
+        Lastname must be at least 1 characters long
+      </span>
+      <span ng-if="regForm.lastname.$error.maxlength && regForm.lastname.$touched">
+        Username must not be longer than 255 characters
+      </span>
+      <br>
+
+      <input type="email" name="email" placeholder="Email" ng-model="reg.user.email" required minlength="1" required>
+      <span ng-if="regForm.email.$invalid && regForm.email.$touched">
+        Must be a valid email address: handle@domain format
+      </span>
+      <br>
+      <input type="text" name="phone" placeholder="Phone ###-###-####" ng-model="reg.user.phone" required minlength="1" pattern="(\d{3})-(\d{3})-(\d{4})">
+      <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
+        Phone must be in the format ###-###-####.
+      </span>
+      <br>
+
+      <input type="text" name="shortname" placeholder="Enter Shortname" ng-model="reg.user.shortname" minlength="2" maxlength="3" required>
+      <span ng-if="(regForm.shortname.$error.minlength || regForm.shortname.$error.required || regForm.shortname.$invalid) && regForm.shortname.$touched">
+        Enter 2 or 3 characters
+      </span>
+      <span ng-if="reg.isValidInput()">
+        Menu item is not avaialble
+      </span>
+      <br>
+
+      <button ng-disabled="regForm.$invalid || reg.isValidInput()" ng-click="reg.createUser()">Submit</button>
+      <div>
+        <span ng-if="reg.completed">
+          Your information has been saved
+        </span>
+      </div>
+    </form>
+  </fieldset>
+</div>
