@@ -1,0 +1,12 @@
+<legend> About Me </legend>
+<span ng-if="me.show">
+  Firstname: {{ me.user.firstname}} <br>
+  Lastname: {{me.user.lastname}} <br>
+  Phone: {{ me.user.phone }} <br>
+  Email: {{ me.user.email }} <br>
+  Category: {{ me.user.meal }} <br>
+</span>
+<span ng-if="!me.show">
+  <a ui-sref="public.register">
+    Not Signed Up Yet. Sign up Now!</a>
+</span>
